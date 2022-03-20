@@ -3,9 +3,6 @@ import { TodoType } from '../../stores/todo/types';
 import { Action, useTodoStore } from '../../stores/todo';
 const prop = defineProps<{ todo: TodoType }>();
 const { deleteTodo, setActionTodo } = useTodoStore();
-const onEdit = (todo: TodoType) => {
-  todo.action = Action.Edit;
-};
 </script>
 
 <template>

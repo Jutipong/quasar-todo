@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { useTodoStore } from '../../stores/todo';
-import { ref } from 'vue';
 const todoStroe = useTodoStore();
-const todoName = ref(null);
+let todoName = $ref('');
 const newTod = () => {
-  if (todoName.value <= 0) return false;
-  todoStroe.newTodo(todoName.value);
-  todoName.value = null;
+  if (todoName.length <= 0) return false;
+  todoStroe.newTodo(todoName);
+  todoName = '';
 };
 </script>
 

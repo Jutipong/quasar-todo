@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { onMounted, reactive } from 'vue';
+import { onMounted } from 'vue';
 import { TodoType } from '../../stores/todo/types';
 import { useTodoStore } from '../../stores/todo';
 const prop = defineProps<{ todo: TodoType }>();
 const { setActionTodo, updateTodo } = useTodoStore();
-const _todo = reactive<TodoType>({ Id: '', Name: '', CreateDate: Date.now(), IsActive: true, action: null });
+const _todo = $ref<TodoType>({ Id: '', Name: '', CreateDate: Date.now(), IsActive: true, action: null });
 onMounted(() => Object.assign(_todo, prop.todo));
 </script>
 

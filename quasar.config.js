@@ -70,7 +70,9 @@ module.exports = configure(function (/* ctx */) {
       // distDir
 
       // extendViteConf (viteConf) {},
-      // viteVuePluginOptions: {},
+      viteVuePluginOptions: {
+        reactivityTransform: true,
+      },
 
       // vitePlugins: [
       //   [ 'package-name', { ..options.. } ]
